@@ -1,0 +1,53 @@
+/* Define o estilo para o conteiner principal */
+.converter{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 400px;
+    padding: 2rem;
+    margin: 2rem auto;
+
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Define o estilo para o título */
+.converter h2{
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: #343e40;
+}
+
+/* Define o estilo para os campos de entrada e seleção */
+.converter input,
+.converter select{
+    width: 100%;
+    padding: 0.7rem 1rem;
+
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    background-color: white;
+    color: #495057;
+    font-size: 1rem;
+}
+
+/* Define um estilo adicional para o campo de entrada */
+.converter input{
+    margin-bottom: 30px;
+}
+
+/* Define o estilo para os elementos span e p */
+.converter span,
+.converter p{
+    margin: 0.5rem;
+    font-size: 1rem;
+    color: #495057;
+}
+
+/* Define um estilo adicional para o campo de p */
+.converter p{
+    font-size: 1.2rem;
+}
