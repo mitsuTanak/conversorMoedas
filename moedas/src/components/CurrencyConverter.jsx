@@ -65,31 +65,37 @@ const CurrencyConverter = () => {
     <div className="converter">
         <h2>Conversor de moedas</h2>
 
-        <input type="number" placeholder="Digite o valor..." value={amount} onChange={(e) => setAmount(e.target.value)} />
-        <span>Selecione as moedas</span>
+        <section className="valorInicial">
+            <input type="number" placeholder="Digite o valor..." value={amount} onChange={(e) => setAmount(e.target.value)} />
+            
+            <span>Em</span>
+            {/* Dropdown para selecionar a moeda de origem */}
+            <select value={fromCurrency} onChange={(e) => setFromCurrency(e.target.value)}>
+                {Object.keys(rates).map((currency)=> (
+                    <option key={currency} value={currency}>
+                        {currency}
+                    </option>
+                ))}
+            </select>
+        </section>
 
-        {/* Dropdown para selecionar a moeda de origem */}
-        <select value={fromCurrency} onChange={(e) => setFromCurrency(e.target.value)}>
-            {Object.keys(rates).map((currency)=> (
-                <option key={currency} value={currency}>
-                    {currency}
-                </option>
-            ))}
-        </select>
+        <span>Para</span>
 
-        <span>para</span>
+        <section className="valorResultante">
+        
+            {/* Dropdown para selecionar a moeda de destino */}
+            <p>{convertedAmount}</p>
 
-        {/* Dropdown para selecionar a moeda de destino */}
-        <select value={toCurrency} onChange={(e) => setToCurrency(e.target.value)}>
-            {Object.keys(rates).map((currency)=> (
-                <option key={currency} value={currency}>
-                    {currency}
-                </option>
-            ))}
-        </select>
+            <select value={toCurrency} onChange={(e) => setToCurrency(e.target.value)}>
+                {Object.keys(rates).map((currency)=> (
+                    <option key={currency} value={currency}>
+                        {currency}
+                    </option>
+                ))}
+            </select>
+        </section>
 
         <h3>{convertedAmount} {toCurrency}</h3>
-        <p>{amount} {fromCurrency} valem {convertedAmount} {toCurrency}</p>
 
 
 
