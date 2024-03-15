@@ -1,4 +1,4 @@
-
+import './App.css'
 import CurrancyConverter from './components/CurrencyConverter.jsx';
 
 
